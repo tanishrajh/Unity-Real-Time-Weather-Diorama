@@ -95,7 +95,7 @@ public class WeatherManager : MonoBehaviour
         }
     }
     
-    // UPDATED: This now correctly calculates the city's local time
+   
     private void UpdateTimeDisplay()
     {
         DateTime utcTime = UnixTimeStampToDateTime(currentWeatherData.dt);
@@ -103,7 +103,7 @@ public class WeatherManager : MonoBehaviour
         timeText.text = localTime.ToString("HH:mm");
     }
     
-    // UPDATED: This now correctly uses the city's local time for day/night audio
+   
     private void UpdateWeatherAudio()
     {
         string weatherCondition = currentWeatherData.weather[0].main;
@@ -144,7 +144,7 @@ public class WeatherManager : MonoBehaviour
         }
     }
 
-    // UPDATED: This now correctly uses the city's local time for the sun position
+    
     private void UpdateSun()
     {
         DateTime utcTime = UnixTimeStampToDateTime(currentWeatherData.dt);
@@ -221,7 +221,7 @@ public class WeatherManager : MonoBehaviour
         }
     }
 
-    // UPDATED: This function now ONLY converts to UTC. No more .ToLocalTime()!
+   
     private DateTime UnixTimeStampToDateTime(long unixTimeStamp)
     {
         DateTime dateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);

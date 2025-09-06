@@ -1,12 +1,10 @@
-// This attribute tells Unity that this class can be serialized, 
-// which is necessary for converting it to/from formats like JSON.
 [System.Serializable]
 public class WeatherData
 {
-    public WeatherInfo[] weather; // The API sends an array, so we need an array
+    public WeatherInfo[] weather; 
     public MainInfo main;
     public SysInfo sys;
-    public long dt; // 'dt' is the timestamp (time of day)
+    public long dt; //time of day
     public int timezone;
     public string name; // The name of the city
 }
@@ -20,7 +18,7 @@ public class WeatherInfo
 [System.Serializable]
 public class MainInfo
 {
-    public float temp; // Temperature
+    public float temp; 
 }
 
 [System.Serializable]
